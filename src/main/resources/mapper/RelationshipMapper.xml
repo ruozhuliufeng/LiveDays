@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTO Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.aixuxi.livedays.mapper.RelationshipMapper">
+    <select id="findRefIdById" resultType="integer" parameterType="integer">
+        select user_ref_id userRefId
+        from relationship
+        where user_id = #{id}
+    </select>
+
+    <select id="findByUserId" resultType="cn.aixuxi.livedays.entity.Relationship" parameterType="integer">
+        select *
+        from relationship
+        where user_id = #{id} or user_ref_id = #{id}
+    </select>
+</mapper>

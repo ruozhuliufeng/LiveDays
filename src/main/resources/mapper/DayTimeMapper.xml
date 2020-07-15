@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTO Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.aixuxi.livedays.mapper.DayTimeMapper">
+
+    <select id="findDaysById" parameterType="integer" resultType="cn.aixuxi.livedays.dto.DayTimeOutputDTO">
+        select d.id id,d.start_time startTime,d.end_time endTime,d.cause cause,d.duration duration,p.is_complete isComplete,p.is_end_complete isEndComplete
+        from daytime d
+        join plan p
+        on d.id = p.day_id
+        where d.user_id = #{id}
+        order by d.start_time desc
+    </select>
+
+    <select id="selectLastById" parameterType="integer" resultType="cn.aixuxi.livedays.entity.DayTime">
+        select *
+        from daytime d
+        where user_id=#{id}
+        order by d.start_time desc
+        limit 1
+    </select>
+</mapper>

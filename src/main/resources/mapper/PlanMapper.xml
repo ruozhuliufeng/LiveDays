@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTO Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.aixuxi.livedays.mapper.PlanMapper">
+    <select id="findPlanById" resultType="cn.aixuxi.livedays.dto.PlanOutputDTO" parameterType="integer">
+        SELECT id id,start_time startTime,end_time endTime,problem problem,solve_plan solvePlan,duration duration,is_carry isCarry
+        from plan
+        where user_id = #{id}
+        limit 5
+    </select>
+
+    <select id="findPlanByDayId" resultType="cn.aixuxi.livedays.entity.Plan" parameterType="integer">
+        select *
+        from plan
+        where day_id = #{id}
+    </select>
+
+    <select id="findPlansById" resultType="cn.aixuxi.livedays.dto.PlanOutputDTO" parameterType="integer">
+        select id id,start_time startTime,end_time endTime,duration duration,problem problem,solve_plan solvePlan,is_carry isCarry
+        from plan
+        where user_id = #{id}
+    </select>
+</mapper>

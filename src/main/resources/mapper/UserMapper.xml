@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTO Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.aixuxi.livedays.mapper.UserMapper">
+    <select id="findIdByBinding" parameterType="string" resultType="integer">
+        select id
+        from user
+        where binding = #{binding}
+    </select>
+    <select id="findById" parameterType="integer" resultType="cn.aixuxi.livedays.dto.UserOutputDTO">
+        select u.id id,d.start_time startTime,d.end_time endTime,d.duration duration,d.cause cause,d.is_plan isPlan,d.id dayId
+        from user u
+        join daytime d
+        on u.id = d.user_id
+        where u.id = #{id}
+        order by d.start_time desc
+    </select>
+</mapper>
