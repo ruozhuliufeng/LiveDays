@@ -105,12 +105,9 @@ public class UserServiceImpl implements UserService {
      */
     @Override
     public User login(UserInputDTO userInputDTO) {
-        Map<String,Object> searchMap = new HashMap<>();
-        searchMap.put("username",userInputDTO.getUsername());
-        searchMap.put("password",userInputDTO.getPassword());
-        List<User> users = userMapper.selectByMap(searchMap);
-        if (users!=null && users.size()>0){
-            return users.get(0);
+        User user = userMapper.login(userInputDTO);
+        if (user!=null){
+            return user;
         }
         return null;
     }
@@ -163,5 +160,11 @@ public class UserServiceImpl implements UserService {
     @Override
     public void updateUser(User refUser) {
         userMapper.updateById(refUser);
+    }
+
+    @Override
+    public boolean isUniqueUsername(String username) {
+        User user =  userMapper.isUniqueUsername(username);
+        return user==null;
     }
 }

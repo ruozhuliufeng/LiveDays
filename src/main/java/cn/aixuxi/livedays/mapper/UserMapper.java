@@ -20,4 +20,8 @@ public interface UserMapper extends BaseMapper<User> {
     List<Integer> findIdByBinding(String binding);
 
     List<UserOutputDTO> findById(Integer id);
+
+    User login(UserInputDTO userInputDTO);
+
+    User isUniqueUsername(String username);
 }

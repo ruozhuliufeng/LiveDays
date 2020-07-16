@@ -15,6 +15,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpSession;
 import java.text.ParseException;
@@ -68,12 +69,12 @@ public class UserController {
         User currentUser = userService.login(userInputDTO);
         httpSession.setAttribute("currentUser",currentUser);
         UserOutputDTO userOutputDTO = userService.findById(currentUser.getId());
-        try {
-            String sustain = DateUtils.dateCompare(userOutputDTO.getStartTime(),new Date());
-            userOutputDTO.setSustain(sustain);
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
+//        try {
+//            String sustain = DateUtils.dateCompare(userOutputDTO.getStartTime(),new Date());
+//            userOutputDTO.setSustain(sustain);
+//        } catch (ParseException e) {
+//            e.printStackTrace();
+//        }
         httpSession.setAttribute("userOutputDTO",userOutputDTO);
         List<PlanOutputDTO> planslist = userService.findPlanById(currentUser.getId());
         httpSession.setAttribute("planslist",planslist);
@@ -159,6 +160,21 @@ public class UserController {
         return "redirect:/";
     }
 
+
+    /**
+     * 功能描述: 判断用户名是否存在
+     * @param username 待判断的用户名
+     * @return : 判断是否存在
+     * @author : ruozhuliufeng
+     * @date : 2020/7/15 22:07
+     */
+    @GetMapping("/isUniqueUsername")
+    @ResponseBody
+    public String isUniqueUsername(String username){
+        boolean userName = userService.isUniqueUsername(username);
+        // 将userName转为字符串
+        return String.valueOf(userName);
+    }
 //    @PostMapping("/update")
 //    public String update(UserInputDTO userInputDTO,HttpSession httpSession){
 //        String imgUrl = UploadUtils.imgUplad(userInputDTO.getImg());

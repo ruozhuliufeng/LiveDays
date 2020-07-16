@@ -16,4 +16,17 @@
         where u.id = #{id}
         order by d.start_time desc
     </select>
+
+    <select id="login" parameterType="cn.aixuxi.livedays.dto.UserInputDTO" resultType="cn.aixuxi.livedays.entity.User">
+        select u.*
+        from user u
+        where u.username = #{username} and u.password = #{password}
+        limit 1
+    </select>
+
+    <select id="isUniqueUsername" parameterType="string" resultType="cn.aixuxi.livedays.entity.User">
+        select u.*
+        from user u
+        where u.username = #{username}
+    </select>
 </mapper>

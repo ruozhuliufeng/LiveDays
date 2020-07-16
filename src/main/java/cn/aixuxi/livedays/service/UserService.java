@@ -31,4 +31,6 @@ public interface UserService {
     User findUserById(Integer userRefId);
 
     void updateUser(User refUser);
+
+    boolean isUniqueUsername(String username);
 }
