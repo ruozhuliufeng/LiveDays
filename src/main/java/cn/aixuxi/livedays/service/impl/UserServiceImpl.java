@@ -163,8 +163,8 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public boolean isUniqueUsername(String username) {
+    public User isUniqueUsername(String username) {
         User user =  userMapper.isUniqueUsername(username);
-        return user==null;
+        return user;
     }
 }

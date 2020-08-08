@@ -32,5 +32,5 @@ public interface UserService {
 
     void updateUser(User refUser);
 
-    boolean isUniqueUsername(String username);
+    User isUniqueUsername(String username);
 }

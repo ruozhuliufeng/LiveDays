@@ -51,7 +51,7 @@
                                 未完成
                             </#if>
                         </td>
-                        <td><a href="/daytime/complete?id=${day.id}" class="btn btn-block">点击完成</a> </td>
+                        <td><a href="/livedays/daytime/complete?id=${day.id}" class="btn btn-block">点击完成</a> </td>
                     </tr>
                     </#list>
                 </tbody>
@@ -89,7 +89,7 @@
                             </td>
                             <td>
                                 <a href="#modal-sections" uk-toggle>修改</a>
-                                ||<a href="/plan/delete?id=${plan.id}">删除</a>
+                                ||<a href="/livedays/plan/delete?id=${plan.id}">删除</a>
                                 <div id="modal-sections" uk-modal>
                                     <div class="uk-modal-dialog">
                                         <button class="uk-modal-close-default" type="button" uk-close></button>
@@ -102,7 +102,7 @@
                                         </div>
                                         <div class="uk-modal-footer uk-text-right">
                                             <button class="uk-button uk-button-default uk-modal-close" type="button">取消</button>
-                                            <a class="uk-button uk-button-primary" href="/plan/update">保存</a>
+                                            <a class="uk-button uk-button-primary" href="/livedays/plan/update">保存</a>
                                         </div>
                                     </div>
                                 </div>

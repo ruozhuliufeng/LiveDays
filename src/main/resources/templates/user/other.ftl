@@ -20,9 +20,9 @@
                 </h3>
             </#if>
             <a class="uk-button uk-button-default uk-width-1-1 uk-margin-small-bottom"
-               href="/daytime/into?id=${currentUser.id}">拉入黑名单</a>
+               href="/livedays/daytime/into?id=${currentUser.id}">拉入黑名单</a>
             <a class="uk-button uk-button-primary uk-width-1-1 uk-margin-small-bottom"
-               href="/daytime/out?id=${currentUser.id}">解除黑名单</a>
+               href="/livedays/daytime/out?id=${currentUser.id}">解除黑名单</a>
         </div>
     </div>
     <div>
@@ -54,7 +54,7 @@
                         <#elseif plan.isCarry==0>
                             <td>重新修改</td>
                         </#if>
-                        <td><a href="/daytime/carry?id=${plan.id}" class="uk-button uk-button-primary">准许实施</a></td>
+                        <td><a href="/livedays/daytime/carry?id=${plan.id}" class="uk-button uk-button-primary">准许实施</a></td>
                     </tr>
                 </#list>
                 </tbody>
@@ -95,7 +95,7 @@
                                     未完成
                                 </#if>
                             </td>
-                            <td><a href="/daytime/endcomplete?id=${day.id}" class="uk-button uk-button-primary">最终解决</a>
+                            <td><a href="/livedays/daytime/endcomplete?id=${day.id}" class="uk-button uk-button-primary">最终解决</a>
                             </td>
                         </tr>
                     </#list>

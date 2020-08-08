@@ -8,11 +8,11 @@
                     <div class="uk-navbar-dropdown">
                         <ul class="uk-nav uk-navbar-dropdown-nav">
                             <#if currentUser.isMaster==1>
-                                <li><a href="/user/center">个人中心</a></li>
-                                <li><a href="/user/other">对方管理</a></li>
+                                <li><a href="/livedays/user/center">个人中心</a></li>
+                                <li><a href="/livedays/user/other">对方管理</a></li>
                             <#elseif currentUser.isMaster == 0>
-                                <li><a href="/user/center">个人中心</a></li>
-                                <li><a href="/user/self">个人管理</a></li>
+                                <li><a href="/livedays/user/center">个人中心</a></li>
+                                <li><a href="/livedays/user/self">个人管理</a></li>
                             </#if>
                         </ul>
                     </div>

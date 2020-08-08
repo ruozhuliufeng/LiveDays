@@ -53,7 +53,7 @@
                                                 <button class="uk-button uk-button-default uk-modal-close"
                                                         type="button">Cancel
                                                 </button>
-                                                <a class="uk-button uk-button-primary" href="/daytime/cause">添加</a>
+                                                <a class="uk-button uk-button-primary" href="/livedays/daytime/cause">添加</a>
                                             </div>
                                         </div>
                                     </div>
@@ -129,7 +129,7 @@
                                             <button class="uk-button uk-button-default uk-modal-close" type="button">
                                                 取消
                                             </button>
-                                            <a class="uk-button uk-button-primary" href="/memo/add">保存</a>
+                                            <a class="uk-button uk-button-primary" href="/livedays/memo/add">保存</a>
                                         </div>
                                     </div>
                                 </div>

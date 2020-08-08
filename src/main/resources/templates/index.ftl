@@ -19,7 +19,7 @@
                 </div>
                 <div class="form">
                     <div style="text-align: center;"> <h2>登录账号</h2></div>
-                    <form action="/user/login" method="post">
+                    <form action="/livedays/user/login" method="post">
                         <input type="text" name="username" placeholder="用户名" required />
                         <input type="password" name="password" placeholder="密码" required />
                         <input type="submit" value="登录" />
@@ -27,7 +27,7 @@
                 </div>
                 <div class="form">
                     <div style="text-align: center;"><h2>创建一个账号</h2></div>
-                    <form action="/user/save" method="post">
+                    <form action="/livedays/user/save" method="post">
                         <input type="text" id="username" name="username" placeholder="用户名" onchange="isUniqueUsername(this)" required />
                         <input type="password" name="password" placeholder="密码" required />
                         <input type="email" name="email" placeholder="Email" required />
@@ -53,7 +53,7 @@
         //请求controller判断用户名的唯一性
         $.ajax({
             //url路径
-            url:"/user/isUniqueUsername",
+            url:"/livedays/user/isUniqueUsername",
             //data请求数据
             data:{"username":username},
             //dataType json

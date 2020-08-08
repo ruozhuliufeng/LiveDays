@@ -127,6 +127,16 @@
             <version>1.4.7</version>
         </dependency>
         <!-- hutools依赖结束 -->
+        <!-- Redis依赖 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-redis</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-pool2</artifactId>
+        </dependency>
+        <!-- Redis依赖结束 -->
     </dependencies>
 
     <build>
